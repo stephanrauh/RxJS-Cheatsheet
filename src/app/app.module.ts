@@ -18,9 +18,21 @@ import {
   MatCardModule,
   MatDividerModule
 } from '@angular/material';
+import { OperationComponent } from './graphics/operation/operation.component';
+import { TransitionComponent } from './graphics/transition/transition.component';
+import { StartComponent } from './graphics/start/start.component';
+import { EndComponent } from './graphics/end/end.component';
 
 @NgModule({
-  declarations: [AppComponent, MapOperatorComponent, NavigationComponent],
+  declarations: [
+    AppComponent,
+    MapOperatorComponent,
+    NavigationComponent,
+    OperationComponent,
+    TransitionComponent,
+    StartComponent,
+    EndComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -43,6 +55,6 @@ import {
     }
   ],
   bootstrap: [AppComponent],
-  exports: [MapOperatorComponent]
+  exports: [MapOperatorComponent, TransitionComponent, StartComponent, EndComponent]
 })
 export class AppModule {}

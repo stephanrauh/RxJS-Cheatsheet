@@ -1,0 +1,14 @@
+<div class="invisible-box" [class.push-down]="data">
+  <div *ngIf="data" class="arrow-container">
+    <div class="arrow line"></div>
+  </div>
+  <div *ngIf="data" class="text">
+    {{data}}
+  </div>
+  <div *ngIf="data" class="arrow-container">
+    <div class="arrow point"></div>
+  </div>
+  <div *ngIf="!data" class="arrow-container long">
+    <div class="arrow point long"></div>
+  </div>
+</div>

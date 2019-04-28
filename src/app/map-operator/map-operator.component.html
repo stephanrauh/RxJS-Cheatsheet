@@ -1,6 +1,5 @@
 <div>The map operator takes an input and returns a computed value.</div>
 
-
 <mat-card class="mat-elevated-z8 push-down">
   <mat-card-header>
     <mat-card-title class="push-left">
@@ -8,10 +7,21 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <mat-divider></mat-divider>
-    <h2>Result:</h2>
-    <div>
-      {{result | async}}
+    <div class="row">
+      <div class="col-md-3">
+        <h2>Current result:</h2>
+        <div>
+          {{result | async}}
+        </div>
+      </div>
+      <div class="col-md-9">
+        <app-start *ngIf="algorithm && algorithm.length>0"></app-start>
+        <div *ngFor="let s of algorithm">
+          <app-operation *ngIf="s.algorithm" [title]="s.algorithm"></app-operation>
+          <app-transition *ngIf="s.data !== undefined" [data]="s.data"></app-transition>
+        </div>
+        <app-end *ngIf="algorithm && algorithm.length>0"></app-end>
+      </div>
     </div>
   </mat-card-content>
   <mat-card-actions>

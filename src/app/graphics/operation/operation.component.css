@@ -1,0 +1,13 @@
+.operation {
+  width: 500px;
+  height: 40px;
+  background-color: #3f51b5;
+  border-radius: 10px;
+  color: white;
+}
+
+.text {
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
