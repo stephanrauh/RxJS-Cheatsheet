@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { map, tap, delay } from 'rxjs/operators';
+import Prism from 'prismjs';
 
 export interface Step {
   algorithm?: string;
@@ -13,7 +14,7 @@ export interface Step {
   templateUrl: './map-operator.component.html',
   styleUrls: ['./map-operator.component.css']
 })
-export class MapOperatorComponent implements OnInit {
+export class MapOperatorComponent implements OnInit, AfterViewInit {
   public result: BehaviorSubject<string> = new BehaviorSubject<string>('3');
 
   public algorithm: Array<Step> = [];
@@ -24,9 +25,14 @@ export class MapOperatorComponent implements OnInit {
 
   ngOnInit() {}
 
+  ngAfterViewInit(): void {
+    Prism.highlightAll();
+  }
+
   public startRequest(): void {
+    Prism.highlightAll();
     this.resetDemo();
-    this.addOperation("this.httpClient.get<any>('https://www.example.com/family')");
+    this.addOperation("httpClient.get('example.com/family')");
     this.httpClient
       .get<any>('https://www.example.com/family')
       .pipe(

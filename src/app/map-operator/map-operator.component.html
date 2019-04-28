@@ -1,31 +1,53 @@
 <div>The map operator takes an input and returns a computed value.</div>
 
 <mat-card class="mat-elevated-z8 push-down">
-  <mat-card-header>
-    <mat-card-title class="push-left">
-      Demo
-    </mat-card-title>
-  </mat-card-header>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="startRequest()">Run demo</button>
+    <button mat-raised-button color="secondary" (click)="resetDemo()">Reset demo</button>
+  </mat-card-actions>
+
   <mat-card-content>
     <div class="row">
+      <div class="col-md-6">
+        <h2>Source code</h2>
+      </div>
+      <div class="col-md-6">
+        <h2>Live demo</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <pre>
+          <code class="language-typescript">
+              this.httpClient
+              .get('https://www.example.com/family')
+              .pipe(
+                tap(data => this.addIntermediateResult(data)),
+                map(data => data.members),
+              )
+              .subscribe();
+            </code>
+          </pre>
+      </div>
+      <div class="col-md-6" *ngIf="algorithm && algorithm.length>0">
+        <app-start></app-start>
+        <div *ngFor="let s of algorithm">
+          <app-operation *ngIf="s.algorithm" [title]="s.algorithm"></app-operation>
+          <app-transition *ngIf="s.data !== undefined" [data]="s.data"></app-transition>
+        </div>
+        <app-end></app-end>
+      </div>
+
+    </div>
+    <!--
+    <div class="row" *ngIf="algorithm && algorithm.length>0">
       <div class="col-md-3">
         <h2>Current result:</h2>
         <div>
           {{result | async}}
         </div>
       </div>
-      <div class="col-md-9">
-        <app-start *ngIf="algorithm && algorithm.length>0"></app-start>
-        <div *ngFor="let s of algorithm">
-          <app-operation *ngIf="s.algorithm" [title]="s.algorithm"></app-operation>
-          <app-transition *ngIf="s.data !== undefined" [data]="s.data"></app-transition>
-        </div>
-        <app-end *ngIf="algorithm && algorithm.length>0"></app-end>
-      </div>
     </div>
+  -->
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="startRequest()">Run demo</button>
-    <button mat-raised-button color="secondary" (click)="resetDemo()">Reset demo</button>
-  </mat-card-actions>
 </mat-card>
