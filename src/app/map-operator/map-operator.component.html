@@ -1,0 +1,21 @@
+<div>The map operator takes an input and returns a computed value.</div>
+
+
+<mat-card class="mat-elevated-z8 push-down">
+  <mat-card-header>
+    <mat-card-title class="push-left">
+      Demo
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <h2>Result:</h2>
+    <div>
+      {{result | async}}
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="startRequest()">Run demo</button>
+    <button mat-raised-button color="secondary" (click)="resetDemo()">Reset demo</button>
+  </mat-card-actions>
+</mat-card>
