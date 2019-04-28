@@ -22,10 +22,12 @@ import { OperationComponent } from './graphics/operation/operation.component';
 import { TransitionComponent } from './graphics/transition/transition.component';
 import { StartComponent } from './graphics/start/start.component';
 import { EndComponent } from './graphics/end/end.component';
+import { ForkJoinOperatorComponent } from './fork-join-operator/fork-join-operator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ForkJoinOperatorComponent,
     MapOperatorComponent,
     NavigationComponent,
     OperationComponent,
