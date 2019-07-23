@@ -2,7 +2,6 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { map, tap, delay } from 'rxjs/operators';
-import Prism from 'prismjs';
 
 export interface Step {
   algorithm?: string;
@@ -25,12 +24,9 @@ export class MapOperatorComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {}
 
-  ngAfterViewInit(): void {
-    Prism.highlightAll();
-  }
+  ngAfterViewInit(): void {}
 
   public startRequest(): void {
-    Prism.highlightAll();
     this.resetDemo();
     this.addOperation("httpClient.get('example.com/family')");
     this.httpClient

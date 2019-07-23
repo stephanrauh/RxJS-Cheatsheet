@@ -17,17 +17,7 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-        <pre>
-          <code class="language-typescript">
-              this.httpClient
-              .get('https://www.example.com/family')
-              .pipe(
-                tap(data => this.addIntermediateResult(data)),
-                map(data => data.members),
-              )
-              .subscribe();
-            </code>
-          </pre>
+        <markdown ngPreserveWhitespaces src="assets/map.ts.md"> </markdown>
       </div>
       <div class="col-md-6" *ngIf="algorithm && algorithm.length>0">
         <app-start></app-start>

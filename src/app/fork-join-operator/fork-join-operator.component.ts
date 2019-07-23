@@ -1,8 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
-import { map, tap, delay } from 'rxjs/operators';
-import Prism from 'prismjs';
+import { BehaviorSubject, from } from 'rxjs';
+import { map, tap, delay, concatMap } from 'rxjs/operators';
 
 export interface Step {
   algorithm?: string;
@@ -25,22 +24,27 @@ export class ForkJoinOperatorComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {}
 
-  ngAfterViewInit(): void {
-    Prism.highlightAll();
-  }
+  ngAfterViewInit(): void {}
 
   public startRequest(): void {
-    Prism.highlightAll();
+    const readNameRequest = (id: string) => this.httpClient.get<string>('example.com/family/name/{id}');
+
+    const readMultipleNames = (ids: Array<string>) => ids.map(id => readNameRequest(id));
+
     this.resetDemo();
     this.addOperation("httpClient.get('example.com/familyIds')");
     this.httpClient
-      .get<any>('https://www.example.com/familyIds')
+      .get<string[]>('https://www.example.com/familyIds')
       .pipe(
         tap(() => this.addIntermediateResult(null)),
         delay(1000),
         tap(() => this.addOperation('pipe(...)')),
         tap(data => this.addIntermediateResult(data)),
         delay(1000)
+        // map(ids => from(ids).pipe(concatMap(id => this.httpClient.get(`example.com/person/${id}`)))),
+        // tap(x => console.log(x))
+
+        // ids.map(id => this.httpClient.get<any>('https://www.example.com/familyIds')))
         // todo: forkJoin calling the https://www.example.com/person/{{id}}
       )
       .subscribe();

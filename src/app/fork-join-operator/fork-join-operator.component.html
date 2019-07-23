@@ -1,4 +1,5 @@
 <div>The forkJoin operator ....</div>
+<div>https://medium.com/@swarnakishore/performing-multiple-http-requests-in-angular-4-5-with-forkjoin-74f3ac166d61</div>
 
 <mat-card class="mat-elevated-z8 push-down">
   <mat-card-actions>
@@ -17,17 +18,7 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-        <pre>
-          <code class="language-typescript">
-              this.httpClient
-              .get('https://www.example.com/familyIds')
-              .pipe(
-                tap(data => this.addIntermediateResult(data)),
-                // todo: forkJoin calling the https://www.example.com/person/{{id}}
-                )
-              .subscribe();
-            </code>
-          </pre>
+        <markdown ngPreserveWhitespaces src="assets/fork-join.ts.md"> </markdown>
       </div>
       <div class="col-md-6" *ngIf="algorithm && algorithm.length>0">
         <app-start></app-start>

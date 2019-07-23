@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { MockHttp } from './mock-http/mock-http';
 import { MapOperatorComponent } from './map-operator/map-operator.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +19,7 @@ import {
   MatDividerModule
 } from '@angular/material';
 import { OperationComponent } from './graphics/operation/operation.component';
+import { MarkdownModule } from 'ngx-markdown';
 import { TransitionComponent } from './graphics/transition/transition.component';
 import { StartComponent } from './graphics/start/start.component';
 import { EndComponent } from './graphics/end/end.component';
@@ -41,6 +42,7 @@ import { ForkJoinOperatorComponent } from './fork-join-operator/fork-join-operat
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    MarkdownModule.forRoot({ loader: HttpClient }),
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
