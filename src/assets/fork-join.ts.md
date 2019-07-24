@@ -1,9 +1,13 @@
 ```typescript
+
 this.httpClient
-  .get('https://www.example.com/familyIds')
+  .get('example.com/familyIds')
   .pipe(
-    tap(data => this.addIntermediateResult(data))
-    // todo: forkJoin calling the https://www.example.com/person/{{id}}
+    map(wrappedIds => wrappedIds.ids as string[]),
+    flatMap(ids => 
+      forkJoin(ids.map(id => this.httpClient.get(`example.com/person/${id}`)))
+    ),
+    map(persons => persons.map(p => p.name + ' ' + p.lastName)),
   )
   .subscribe();
 ```

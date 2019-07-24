@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, from, forkJoin } from 'rxjs';
-import { map, tap, delay, concatMap } from 'rxjs/operators';
+import { map, tap, delay, concatMap, flatMap } from 'rxjs/operators';
 
 export interface Step {
   algorithm?: string;
@@ -34,19 +34,21 @@ export class ForkJoinOperatorComponent implements OnInit, AfterViewInit {
     this.resetDemo();
     this.addOperation("httpClient.get('example.com/familyIds')");
     this.httpClient
-      .get<string[]>('https://www.example.com/familyIds')
+      .get<any>('https://www.example.com/familyIds')
       .pipe(
         tap(() => this.addIntermediateResult(null)),
         delay(1000),
         tap(() => this.addOperation('pipe(...)')),
         tap(data => this.addIntermediateResult(data)),
-        tap(x => console.log(x)),
+        map(wrappedIds => wrappedIds.ids as string[]),
+        tap(() => this.addOperation('map(wrappedIds => wrappedIds.ids as string[])')),
+        tap(data => this.addIntermediateResult(data)),
         delay(1000),
-        map(ids => forkJoin(ids.map(id => this.httpClient.get(`example.com/person/${id}`)))),
-        tap(x => console.log(x))
-
-        // ids.map(id => this.httpClient.get<any>('https://www.example.com/familyIds')))
-        // todo: forkJoin calling the https://www.example.com/person/{{id}}
+        flatMap(ids => forkJoin(ids.map(id => this.httpClient.get(`https://www.example.com/person/${id}`)))),
+        tap(() => this.addOperation('flatMap(ids => forkJoin(ids.map(id => this.httpClient.get(`https://www.example.com/person/${id}`)))),')),
+        tap(data => this.addIntermediateResult(data)),
+        map(persons => persons.map(person => person.name + ' ' + person.lastName)),
+        tap(() => this.addOperation('map(persons => persons.map(person => person.name + " " + person.lastName)),')),
       )
       .subscribe();
   }
