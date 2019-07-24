@@ -1,8 +1,8 @@
+import { AbstractOperatorComponent } from './../graphics/abstract-operator-component';
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
 import { map, tap, delay, flatMap } from 'rxjs/operators';
-import { AbstractOperatorComponent } from '../abstract-operator-component';
 
 @Component({
   selector: 'app-fork-join-operator',
@@ -32,10 +32,11 @@ export class ForkJoinOperatorComponent extends AbstractOperatorComponent {
         tap(() =>
           this.addOperation('flatMap(ids => forkJoin(ids.map(id => this.httpClient.get(`example.com/person/${id}`)))),')
         ),
-        tap(data => this.addIntermediateResult(data)),
+        tap(data => this.addIntermediateResult(data, 3)),
         map(persons => persons.map(person => person.name + ' ' + person.lastName)),
-        tap(() => this.addOperation('map(persons => persons.map(person => person.name + " " + person.lastName)),'))
-      )
+        tap(() => this.addOperation('map(persons => persons.map(person => person.name + " " + person.lastName)),')),
+        tap(data => this.addIntermediateResult(data))
+        )
       .subscribe();
   }
 }

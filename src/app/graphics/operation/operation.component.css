@@ -11,3 +11,7 @@
   text-align: center;
   width: 100%;
 }
+
+.multiline {
+  height: 60px;
+}

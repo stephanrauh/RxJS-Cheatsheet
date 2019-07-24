@@ -24,6 +24,7 @@ import { TransitionComponent } from './graphics/transition/transition.component'
 import { StartComponent } from './graphics/start/start.component';
 import { EndComponent } from './graphics/end/end.component';
 import { ForkJoinOperatorComponent } from './fork-join-operator/fork-join-operator.component';
+import { AlgorithmComponent } from './graphics/algorithm/algorithm.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ForkJoinOperatorComponent } from './fork-join-operator/fork-join-operat
     OperationComponent,
     TransitionComponent,
     StartComponent,
-    EndComponent
+    EndComponent,
+    AlgorithmComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
   selector: 'app-transition',
@@ -6,11 +6,10 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
   styleUrls: ['./transition.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TransitionComponent implements OnInit {
+export class TransitionComponent {
   @Input()
-  data: string;
+  public data: string;
 
-  constructor() {}
-
-  ngOnInit() {}
+  @Input()
+  public lines = 1;
 }

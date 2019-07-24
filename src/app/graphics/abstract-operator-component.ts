@@ -19,13 +19,13 @@ export class AbstractOperatorComponent {
     this.algorithm.push({ algorithm: typescript });
   }
 
-  public addIntermediateResult(data: any) {
+  public addIntermediateResult(data: any, lines = 1) {
     if (data === null) {
-      this.algorithm.push({ data: '' });
+      this.algorithm.push({ data: '', lines });
       this.result.next(undefined);
     } else {
       const text = JSON.stringify(data).replace(",", ", ").replace(":", ", ");
-      this.algorithm.push({ data: text});
+      this.algorithm.push({ data: text, lines});
       this.result.next(text);
     }
   }

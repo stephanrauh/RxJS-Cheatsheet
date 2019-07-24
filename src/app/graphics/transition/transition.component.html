@@ -1,4 +1,4 @@
-<div class="invisible-box" [class.push-down]="data">
+<div class="invisible-box" [class.push-down]="data" [class.two-lines]="lines===2" [class.three-lines]="lines===3">
   <div *ngIf="data" class="arrow-container">
     <div class="arrow line"></div>
   </div>

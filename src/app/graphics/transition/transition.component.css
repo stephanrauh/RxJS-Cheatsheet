@@ -5,6 +5,14 @@
   margin-bottom: -20px;
 }
 
+.two-lines {
+  height: 76px;
+}
+
+.three-lines {
+  height: 92px;
+}
+
 .push-down {
   margin-bottom: 37px;
 }

@@ -9,36 +9,20 @@
 
   <mat-card-content>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-7">
         <h2>Source code</h2>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5">
         <h2>Live demo</h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-7">
         <markdown ngPreserveWhitespaces src="assets/fork-join.ts.md"> </markdown>
       </div>
-      <div class="col-md-6" *ngIf="algorithm && algorithm.length>0">
-        <app-start></app-start>
-        <div *ngFor="let s of algorithm">
-          <app-operation *ngIf="s.algorithm" [title]="s.algorithm"></app-operation>
-          <app-transition *ngIf="s.data !== undefined" [data]="s.data"></app-transition>
-        </div>
-        <app-end></app-end>
-      </div>
-
-    </div>
-    <!--
-    <div class="row" *ngIf="algorithm && algorithm.length>0">
-      <div class="col-md-3">
-        <h2>Current result:</h2>
-        <div>
-          {{result | async}}
-        </div>
+      <div class="col-md-5" *ngIf="algorithm && algorithm.length > 0">
+        <app-algorithm [algorithm]="algorithm"></app-algorithm>
       </div>
     </div>
-  -->
   </mat-card-content>
 </mat-card>

@@ -1,0 +1,6 @@
+<app-start></app-start>
+<div *ngFor="let s of algorithm">
+  <app-operation *ngIf="s.algorithm" [title]="s.algorithm"></app-operation>
+  <app-transition *ngIf="s.data !== undefined" [data]="s.data" [lines]="s.lines"></app-transition>
+</div>
+<app-end></app-end>

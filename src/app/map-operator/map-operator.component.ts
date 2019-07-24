@@ -1,9 +1,7 @@
 import { Component} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, tap, delay } from 'rxjs/operators';
-import { AbstractOperatorComponent } from '../abstract-operator-component';
-
-
+import { AbstractOperatorComponent } from '../graphics/abstract-operator-component';
 
 @Component({
   selector: 'app-map-operator',
