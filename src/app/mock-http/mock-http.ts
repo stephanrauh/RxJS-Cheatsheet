@@ -7,19 +7,19 @@ export class MockHttp implements HttpInterceptor {
   constructor() {}
 
   public intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (request.url.startsWith('https://www.example.com/familyIds')) {
+    if (request.url.startsWith('example.com/familyIds')) {
       return of(this.familyIds());
-    } else if (request.url.startsWith('https://www.example.com/family')) {
+    } else if (request.url.startsWith('example.com/family')) {
       return of(this.family());
-    } else if (request.url.startsWith('https://www.example.com/person')) {
-      let id = Number(request.url.replace('https://www.example.com/person/', ''));
+    } else if (request.url.startsWith('example.com/person')) {
+      const id = Number(request.url.replace('example.com/person/', ''));
       return of(this.person(id));
     }
     return next.handle(request);
   }
 
   public family(): HttpResponse<any> {
-    const result = new HttpResponse({ body: { members: 3 }, status: 200 });
+    const result = new HttpResponse({ body: { members: 3, address: 'Gummersbach' }, status: 200 });
     return result;
   }
 

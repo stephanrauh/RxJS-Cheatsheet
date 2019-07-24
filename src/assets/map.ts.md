@@ -1,6 +1,6 @@
 ```typescript
 this.httpClient
-  .get('https://www.example.com/family')
-  .pipe(map(data => data.members))
+  .get('example.com/family')
+  .pipe(map(data => data.address))
   .subscribe();
 ```
