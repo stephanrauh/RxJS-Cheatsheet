@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, from } from 'rxjs';
+import { BehaviorSubject, from, forkJoin } from 'rxjs';
 import { map, tap, delay, concatMap } from 'rxjs/operators';
 
 export interface Step {
@@ -40,9 +40,10 @@ export class ForkJoinOperatorComponent implements OnInit, AfterViewInit {
         delay(1000),
         tap(() => this.addOperation('pipe(...)')),
         tap(data => this.addIntermediateResult(data)),
-        delay(1000)
-        // map(ids => from(ids).pipe(concatMap(id => this.httpClient.get(`example.com/person/${id}`)))),
-        // tap(x => console.log(x))
+        tap(x => console.log(x)),
+        delay(1000),
+        map(ids => forkJoin(ids.map(id => this.httpClient.get(`example.com/person/${id}`)))),
+        tap(x => console.log(x))
 
         // ids.map(id => this.httpClient.get<any>('https://www.example.com/familyIds')))
         // todo: forkJoin calling the https://www.example.com/person/{{id}}
