@@ -1,28 +1,4 @@
 <div>A typical usecase of forkJoin is to call several REST in parallel and to collect them as a single Observable.</div>
 <div>https://medium.com/@swarnakishore/performing-multiple-http-requests-in-angular-4-5-with-forkjoin-74f3ac166d61</div>
 
-<mat-card class="mat-elevated-z8 push-down">
-  <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="startRequest()">Run demo</button>
-    <button mat-raised-button color="secondary" (click)="resetDemo()">Reset demo</button>
-  </mat-card-actions>
-
-  <mat-card-content>
-    <div class="row">
-      <div class="col-md-7">
-        <h2>Source code</h2>
-      </div>
-      <div class="col-md-5">
-        <h2>Live demo</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-7">
-        <markdown ngPreserveWhitespaces src="assets/fork-join.ts.md"> </markdown>
-      </div>
-      <div class="col-md-5" *ngIf="algorithm && algorithm.length > 0">
-        <app-algorithm [algorithm]="algorithm"></app-algorithm>
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>
+<app-default [demo]="this"></app-default>

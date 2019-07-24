@@ -1,7 +1,7 @@
 import { BehaviorSubject } from 'rxjs';
 import { Step } from './step';
 
-export class AbstractOperatorComponent {
+export abstract class AbstractOperatorComponent {
   public result: BehaviorSubject<string> = new BehaviorSubject<string>('3');
 
   public algorithm: Array<Step> = [];
@@ -9,6 +9,8 @@ export class AbstractOperatorComponent {
   constructor() {
     this.resetDemo();
   }
+
+  public abstract startRequest(): void;
 
   public resetDemo(): void {
     this.result.next(undefined);

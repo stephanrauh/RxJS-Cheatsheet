@@ -1,0 +1,25 @@
+<mat-card class="mat-elevated-z8 push-down">
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="demo.startRequest()">Run demo</button>
+      <button mat-raised-button color="secondary" (click)="demo.resetDemo()">Reset demo</button>
+    </mat-card-actions>
+
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-7">
+          <h2>Source code</h2>
+        </div>
+        <div class="col-md-5">
+          <h2>Live demo</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7">
+          <markdown ngPreserveWhitespaces src="assets/map.ts.md"> </markdown>
+        </div>
+        <div class="col-md-5" *ngIf="demo.algorithm && demo.algorithm.length > 0">
+          <app-algorithm [algorithm]="demo.algorithm"></app-algorithm>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
