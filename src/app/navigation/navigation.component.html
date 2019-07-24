@@ -4,9 +4,23 @@
     [opened]="!(isHandset$ | async)">
     <mat-toolbar>Operators</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/map">Map</a>
-      <a mat-list-item routerLink="/forkjoin">ForkJoin</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item routerLink="/pipe">pipe</a>
+      <a mat-list-item routerLink="/map-js">map (Vanilla JS)</a>
+      <a mat-list-item routerLink="/map">map (RxJS)</a>
+      <a mat-list-item routerLink="/tap">tap</a>
+      <a mat-list-item routerLink="/forkjoin">forkJoin (simple)</a>
+      <a mat-list-item routerLink="/forkjoin-chaining">forkJoin (chaining)</a>
+      <a mat-list-item routerLink="/flatten">flatten</a>
+      <a mat-list-item routerLink="/mergeAll">mergeAll</a>
+      <a mat-list-item routerLink="/switchMap">switchMap</a>
+      <a mat-list-item routerLink="/catchError">catchError</a>
+      <a mat-list-item routerLink="/delay">delay</a>
+      <a mat-list-item routerLink="/debounce">debounce</a>
+      <a mat-list-item routerLink="/takeUntil">takeUntil</a>
+      <a mat-list-item routerLink="/unsubscribe">unsubscribe</a>
+      <a mat-list-item routerLink="/filter">filter</a>
+      <a mat-list-item routerLink="/toArray">toArray</a>
+      <a mat-list-item routerLink="/of">of</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
