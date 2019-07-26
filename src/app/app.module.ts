@@ -26,6 +26,8 @@ import { EndComponent } from './graphics/end/end.component';
 import { ForkJoinOperatorComponent } from './fork-join-operator/fork-join-operator.component';
 import { AlgorithmComponent } from './graphics/algorithm/algorithm.component';
 import { DefaultComponent } from './layout/default/default.component';
+import { TakeOneOperatorComponent } from './take-one/take-one-operator.component';
+import { TakeUntilOperatorComponent } from './take-until/take-until-operator.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { DefaultComponent } from './layout/default/default.component';
     MapOperatorComponent,
     NavigationComponent,
     OperationComponent,
+    TakeOneOperatorComponent,
+    TakeUntilOperatorComponent,
     TransitionComponent,
     StartComponent,
     EndComponent,

@@ -1,0 +1,6 @@
+<div>take(1) is useful because it unsubscribes automatically after the first result.</div>
+<app-default [demo]="this" operator="take-one">
+  <div *ngIf="subscription">
+    Subscription is currently: {{subscription.closed? 'unsubscribed' : 'active'}}
+  </div>
+</app-default>

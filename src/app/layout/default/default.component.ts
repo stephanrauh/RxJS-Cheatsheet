@@ -7,7 +7,9 @@ import { AbstractOperatorComponent } from '../../graphics/abstract-operator-comp
   styleUrls: ['./default.component.css']
 })
 export class DefaultComponent {
-@Input()
-public demo: AbstractOperatorComponent;
+  @Input()
+  public demo: AbstractOperatorComponent;
 
+  @Input()
+  public operator: string;
 }
