@@ -1,6 +1,15 @@
-<div>take(1) is useful because it unsubscribes automatically after the first result.</div>
+<div><code>take(1)</code> is useful because it unsubscribes automatically after the first result. It's identical to
+  <code>first()</code>.</div>
+<div>
+  You can see the state of the subscription in the demo. <code>take(1)</code> unsubscribes
+  even when the observable reports an error (such as an 404 response),
+</div>
+<div><b>Caveat:</b><code>take(1)</code> does not subscribe when the server doesn't respond. So it's a
+  potential memory leak.</div>
 <app-default [demo]="this" operator="take-one">
   <div *ngIf="subscription">
-    Subscription is currently: {{subscription.closed? 'unsubscribed' : 'active'}}
+    <p>
+      Subscription is currently: {{subscription.closed? 'unsubscribed' : 'active'}}
+    </p>
   </div>
 </app-default>
