@@ -1,3 +1,19 @@
-<div>The map operator takes an input and returns a computed value.</div>
+<div><code>takeUntil()</code> doesn't change the data. It simply passed through the operator until the
+  parameter <code>Observable</code> emits the value <code>true</code>. When that happens,
+  <code>takeUntil</code> completes and closes the main <code>Observable</code>.</div>
+<div>A common use case is closing the stream when the Angular component is destroyed.</div>
 
-<app-default [demo]="this" operator="take-until"></app-default>
+
+<app-default [demo]="this" operator="take-until" [secondButton]="'destroy component'">
+  <div *ngIf="isSubscriptionAlive!==undefined">
+    <p>
+      Subscription is currently: {{isSubscriptionAlive? 'active': 'unsubscribed'}}
+    </p>
+  </div>
+</app-default>
+<app-postit class="postit-top" *ngIf="isSubscriptionAlive===undefined">
+  draw a graphic explaining the streams
+</app-postit>
+<app-postit class="postit-middle" *ngIf="isSubscriptionAlive===undefined">
+  visualize the error messages thrown when the component is already closed
+</app-postit>

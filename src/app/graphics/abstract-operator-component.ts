@@ -26,9 +26,13 @@ export abstract class AbstractOperatorComponent {
       this.algorithm.push({ data: '', lines });
       this.result.next(undefined);
     } else {
-      const text = JSON.stringify(data).replace(",", ", ").replace(":", ", ");
-      this.algorithm.push({ data: text, lines});
+      const text = JSON.stringify(data)
+        .replace(',', ', ')
+        .replace(':', ', ');
+      this.algorithm.push({ data: text, lines });
       this.result.next(text);
     }
   }
+
+  public onSecondButtonClick() {}
 }

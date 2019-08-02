@@ -29,6 +29,7 @@ import { DefaultComponent } from './layout/default/default.component';
 import { TakeOneOperatorComponent } from './take-one/take-one-operator.component';
 import { TakeUntilOperatorComponent } from './take-until/take-until-operator.component';
 import { MapJsOperatorComponent } from './map-js-operator/map-js-operator.component';
+import { PostitComponent } from './layout/postit/postit.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { MapJsOperatorComponent } from './map-js-operator/map-js-operator.compon
     StartComponent,
     EndComponent,
     AlgorithmComponent,
-    DefaultComponent
+    DefaultComponent,
+    PostitComponent
   ],
   imports: [
     BrowserModule,

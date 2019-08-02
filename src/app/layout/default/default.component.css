@@ -1,6 +1,7 @@
 h2.compact {
   margin-bottom: 3px;
   margin-top: 3px;
+  display: inline-block;
 }
 
 .pull-right {
@@ -9,4 +10,8 @@ h2.compact {
 
 .push-down {
   margin-top: 1em;
+}
+
+.mat-raised-button {
+  margin-left: 6px;
 }

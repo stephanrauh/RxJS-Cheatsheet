@@ -12,4 +12,7 @@ export class DefaultComponent {
 
   @Input()
   public operator: string;
+
+  @Input()
+  public secondButton: string;
 }
