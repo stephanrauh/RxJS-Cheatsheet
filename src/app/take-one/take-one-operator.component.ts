@@ -20,7 +20,7 @@ export class TakeOneOperatorComponent extends AbstractOperatorComponent {
     this.resetDemo();
     this.addOperation("httpClient.get('example.com/family')");
     this.subscription = this.httpClient
-      .get<any>('xexample.com/family')
+      .get<any>('example.com/family')
       .pipe(
         tap(() => this.addIntermediateResult(null)),
         delay(1000),

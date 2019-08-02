@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { MapOperatorComponent } from './map-operator/map-operator.component';
 import { ForkJoinOperatorComponent } from './fork-join-operator/fork-join-operator.component';
 import { TakeOneOperatorComponent } from './take-one/take-one-operator.component';
+import { MapJsOperatorComponent } from './map-js-operator/map-js-operator.component';
 
 const routes: Routes = [
-  { path: 'map-js', component: MapOperatorComponent },
+  { path: 'map-js', component: MapJsOperatorComponent },
   { path: 'map', component: MapOperatorComponent },
   { path: 'forkjoin', component: ForkJoinOperatorComponent },
   { path: 'forkjoin-chaining', component: ForkJoinOperatorComponent },

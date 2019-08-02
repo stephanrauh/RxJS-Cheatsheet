@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { Persons } from './persons';
+import { Person } from './person';
+import { Family } from './Family';
+import { IdList } from './id-list';
 
 @Injectable()
 export class MockHttp implements HttpInterceptor {
@@ -11,39 +15,53 @@ export class MockHttp implements HttpInterceptor {
       return of(this.familyIds());
     } else if (request.url.startsWith('example.com/family')) {
       return of(this.family());
-    } else if (request.url.startsWith('example.com/person')) {
-      const id = Number(request.url.replace('example.com/person/', ''));
+    } else if (request.url.startsWith('example.com/persons/')) {
+      const id = Number(request.url.replace('example.com/persons/', ''));
       return of(this.person(id));
+    } else if (request.url.startsWith('example.com/persons')) {
+      return of(this.persons());
     }
     return next.handle(request);
   }
 
-  public family(): HttpResponse<any> {
+  public family(): HttpResponse<Family> {
     const result = new HttpResponse({ body: { members: 3, address: 'Gummersbach' }, status: 200 });
     return result;
   }
 
-  public familyIds(): HttpResponse<any> {
+  public familyIds(): HttpResponse<IdList> {
     const result = new HttpResponse({ body: { ids: [4234, 4701, 3284] }, status: 200 });
     return result;
   }
 
-  public person(id: number): HttpResponse<any> {
-    let person: object;
+  public person(id: number): HttpResponse<Person> {
+    let person: Person;
     switch (id) {
       case 4234:
-        person = { name: 'John', lastName: 'Doe' };
+        person = { id: 4234, name: 'John', lastName: 'Doe' };
         break;
       case 4701:
-        person = { name: 'Jane', lastName: 'Doe' };
+        person = { id: 4701, name: 'Jane', lastName: 'Doe' };
         break;
       case 3284:
-        person = { name: 'Jimmy', lastName: 'Doe' };
+        person = { id: 3284, name: 'Jimmy', lastName: 'Doe' };
         break;
       default:
-        person = { name: 'Unknown', lastName: 'Person' };
+        person = { id: null, name: 'Unknown', lastName: 'Person' };
     }
     const result = new HttpResponse({ body: person, status: 200 });
+    return result;
+  }
+
+  public persons(): HttpResponse<Persons> {
+    const persons: Persons = {
+      persons: [
+        { id: 4234, name: 'John', lastName: 'Doe' },
+        { id: 4701, name: 'Jane', lastName: 'Doe' },
+        { id: 3284, name: 'Jimmy', lastName: 'Doe' }
+      ]
+    };
+    const result = new HttpResponse({ body: persons, status: 200 });
     return result;
   }
 }

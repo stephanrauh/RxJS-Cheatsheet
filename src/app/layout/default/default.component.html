@@ -2,14 +2,14 @@
   <mat-card-content>
     <div class="row">
       <div class="col-md-7">
-        <div>
-          <button mat-raised-button color="primary" (click)="demo.startRequest()">Run demo</button>
-          <button mat-raised-button color="secondary" (click)="demo.resetDemo()">Reset demo</button>
-        </div>
-        <h2>Source code</h2>
+        <h2 class="compact">Source code</h2>
       </div>
-      <div class="col-md-5">
-        <h2>Live demo</h2>
+      <div class="col-md-2">
+        <h2 class="compact">Live demo</h2>
+      </div>
+      <div class="col-md-3">
+        <button class="pull-right" mat-raised-button color="primary" (click)="demo.startRequest()">Run demo</button>
+        <button class="pull-right" mat-raised-button color="secondary" (click)="demo.resetDemo()">Reset demo</button>
       </div>
     </div>
     <div class="row">

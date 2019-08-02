@@ -1,0 +1,12 @@
+h2.compact {
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+
+.pull-right {
+  float: right;
+}
+
+.push-down {
+  margin-top: 1em;
+}
