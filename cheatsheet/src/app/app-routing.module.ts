@@ -5,8 +5,10 @@ import { ForkJoinOperatorComponent } from './fork-join-operator/fork-join-operat
 import { TakeOneOperatorComponent } from './take-one/take-one-operator.component';
 import { MapJsOperatorComponent } from './map-js-operator/map-js-operator.component';
 import { TakeUntilOperatorComponent } from './take-until/take-until-operator.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 const routes: Routes = [
+  { path: 'pipe', component: PipeComponent },
   { path: 'map-js', component: MapJsOperatorComponent },
   { path: 'map', component: MapOperatorComponent },
   { path: 'forkjoin', component: ForkJoinOperatorComponent },

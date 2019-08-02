@@ -1,0 +1,10 @@
+<div><code>pipe()</code> is always the beginning of the chain of operators.
+  The operators, in turn, are imported from the package <code>'rxjs/operators'</code>.
+</div>
+<div>If you're into software archeology, you may see a slightly simpler syntax that doesn't need
+  <code>pipe()</code>. The modern but convoluted version allows for a better tree shaking. In other words:
+  your program is smaller and faster.
+</div>
+
+<app-default [demo]="this" operator="pipe">
+</app-default>

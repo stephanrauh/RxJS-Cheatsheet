@@ -30,6 +30,7 @@ import { TakeOneOperatorComponent } from './take-one/take-one-operator.component
 import { TakeUntilOperatorComponent } from './take-until/take-until-operator.component';
 import { MapJsOperatorComponent } from './map-js-operator/map-js-operator.component';
 import { PostitComponent } from './layout/postit/postit.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PostitComponent } from './layout/postit/postit.component';
     MapJsOperatorComponent,
     NavigationComponent,
     OperationComponent,
+    PipeComponent,
     TakeOneOperatorComponent,
     TakeUntilOperatorComponent,
     TransitionComponent,
