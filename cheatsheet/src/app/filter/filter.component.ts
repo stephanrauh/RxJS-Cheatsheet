@@ -5,12 +5,12 @@ import { AbstractOperatorComponent } from '../graphics/abstract-operator-compone
 import { Family } from '../mock-http/family';
 
 @Component({
-  selector: 'app-<%= dasherize(operator) %>',
-  templateUrl: './<%= dasherize(operator) %>.component.html',
-  styleUrls: ['./<%= dasherize(operator) %>.component.css']
+  selector: 'app-filter',
+  templateUrl: './filter.component.html',
+  styleUrls: ['./filter.component.css']
 })
 
-export class <%= classify(operator) %>Component extends AbstractOperatorComponent {
+export class FilterComponent extends AbstractOperatorComponent {
   public demoHasStarted = false;
 
   constructor(private httpClient: HttpClient) {
@@ -26,7 +26,7 @@ export class <%= classify(operator) %>Component extends AbstractOperatorComponen
       .get<Family>('example.com/family')
       .pipe(
         delay(1000),
-        tap(() => this.addOperation('<%= camelize(operator) %>())')),
+        tap(() => this.addOperation('filter())')),
         tap(() => this.addIntermediateResult(null)),
         take(1)
       )

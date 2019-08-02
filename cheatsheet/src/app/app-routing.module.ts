@@ -7,11 +7,13 @@ import { MapJsOperatorComponent } from './map-js-operator/map-js-operator.compon
 import { TakeUntilOperatorComponent } from './take-until/take-until-operator.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { TapComponent } from './tap/tap.component';
+import { FilterComponent } from './filter/filter.component';
 
 const routes: Routes = [
   { path: 'pipe', component: PipeComponent },
   { path: 'map-js', component: MapJsOperatorComponent },
   { path: 'map', component: MapOperatorComponent },
+  { path: 'filter', component: FilterComponent },
   { path: 'forkjoin', component: ForkJoinOperatorComponent },
   { path: 'forkjoin-chaining', component: ForkJoinOperatorComponent },
   { path: 'take-one', component: TakeOneOperatorComponent },

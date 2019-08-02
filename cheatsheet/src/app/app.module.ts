@@ -32,11 +32,13 @@ import { MapJsOperatorComponent } from './map-js-operator/map-js-operator.compon
 import { PostitComponent } from './layout/postit/postit.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { TapComponent } from './tap/tap.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ForkJoinOperatorComponent,
+    FilterComponent,
     MapOperatorComponent,
     MapJsOperatorComponent,
     NavigationComponent,

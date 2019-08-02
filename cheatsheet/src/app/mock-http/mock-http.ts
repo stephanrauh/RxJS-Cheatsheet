@@ -3,8 +3,8 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } fr
 import { Observable, of } from 'rxjs';
 import { Persons } from './persons';
 import { Person } from './person';
-import { Family } from './Family';
 import { IdList } from './id-list';
+import { Family } from './family';
 
 @Injectable()
 export class MockHttp implements HttpInterceptor {

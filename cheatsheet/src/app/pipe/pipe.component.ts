@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { take, tap, delay, map } from 'rxjs/operators';
 import { AbstractOperatorComponent } from '../graphics/abstract-operator-component';
-import { Family } from '../mock-http/Family';
+import { Family } from '../mock-http/family';
 
 @Component({
   selector: 'app-pipe',
