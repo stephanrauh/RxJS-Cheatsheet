@@ -33,26 +33,48 @@ import { PostitComponent } from './layout/postit/postit.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { TapComponent } from './tap/tap.component';
 import { FilterComponent } from './filter/filter.component';
+import { ForkJoinComponent } from './fork-join/fork-join.component';
+import { FlattenComponent } from './flatten/flatten.component';
+import { MergeAllComponent } from './merge-all/merge-all.component';
+import { SwitchMapComponent } from './switch-map/switch-map.component';
+import { CatchErrorComponent } from './catch-error/catch-error.component';
+import { DelayComponent } from './delay/delay.component';
+import { DebounceComponent } from './debounce/debounce.component';
+import { OfComponent } from './of/of.component';
+import { ToArrayComponent } from './to-array/to-array.component';
+import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AlgorithmComponent,
+    CatchErrorComponent,
+    DebounceComponent,
+    DelayComponent,
+    DefaultComponent,
+    EndComponent,
+    FlattenComponent,
+    ForkJoinComponent,
     ForkJoinOperatorComponent,
     FilterComponent,
     MapOperatorComponent,
     MapJsOperatorComponent,
+    MergeAllComponent,
     NavigationComponent,
+    OfComponent,
     OperationComponent,
     PipeComponent,
+    PostitComponent,
+    StartComponent,
+    SubscribeComponent,
+    SwitchMapComponent,
     TakeOneOperatorComponent,
     TakeUntilOperatorComponent,
     TapComponent,
+    ToArrayComponent,
     TransitionComponent,
-    StartComponent,
-    EndComponent,
-    AlgorithmComponent,
-    DefaultComponent,
-    PostitComponent
+    UnsubscribeComponent
   ],
   imports: [
     BrowserModule,
