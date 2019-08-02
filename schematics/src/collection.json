@@ -1,0 +1,10 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "cheatsheet": {
+      "description": "Schematics for generation RxJS documentation",
+      "factory": "./rxjs-cheatsheet-schematics/index#rxjsCheatsheetSchematics",
+      "schema": "./rxjs-cheatsheet-schematics/schema.json"
+    }
+  }
+}
