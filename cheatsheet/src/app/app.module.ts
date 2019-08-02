@@ -31,6 +31,7 @@ import { TakeUntilOperatorComponent } from './take-until/take-until-operator.com
 import { MapJsOperatorComponent } from './map-js-operator/map-js-operator.component';
 import { PostitComponent } from './layout/postit/postit.component';
 import { PipeComponent } from './pipe/pipe.component';
+import { TapComponent } from './tap/tap.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { PipeComponent } from './pipe/pipe.component';
     PipeComponent,
     TakeOneOperatorComponent,
     TakeUntilOperatorComponent,
+    TapComponent,
     TransitionComponent,
     StartComponent,
     EndComponent,

@@ -16,7 +16,7 @@
       <div class="col-md-7">
         <markdown ngPreserveWhitespaces src="assets/{{operator}}/source.md"> </markdown>
       </div>
-      <div class="col-md-5" *ngIf="demo.algorithm && demo.algorithm.length > 0">
+      <div class="col-md-5 push-down" *ngIf="demo.algorithm && demo.algorithm.length > 0">
         <ng-content></ng-content>
         <app-algorithm [algorithm]="demo.algorithm"></app-algorithm>
       </div>

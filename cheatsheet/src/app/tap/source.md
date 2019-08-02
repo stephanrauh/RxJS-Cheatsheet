@@ -2,7 +2,8 @@
 this.httpClient
   .get<Family>('example.com/family')
   .pipe(
-    <%= dasherize(operator) %>(data => data.address)
+    tap(data => console.log(data)),
+    tap(data => console.log(data.constructor.name))
   )
   .subscribe();
 ```

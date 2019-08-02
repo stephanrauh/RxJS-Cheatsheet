@@ -6,6 +6,7 @@ import { TakeOneOperatorComponent } from './take-one/take-one-operator.component
 import { MapJsOperatorComponent } from './map-js-operator/map-js-operator.component';
 import { TakeUntilOperatorComponent } from './take-until/take-until-operator.component';
 import { PipeComponent } from './pipe/pipe.component';
+import { TapComponent } from './tap/tap.component';
 
 const routes: Routes = [
   { path: 'pipe', component: PipeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'forkjoin-chaining', component: ForkJoinOperatorComponent },
   { path: 'take-one', component: TakeOneOperatorComponent },
   { path: 'take-until', component: TakeUntilOperatorComponent },
+  { path: 'tap', component: TapComponent },
   { path: '', redirectTo: '/map', pathMatch: 'prefix' }
 ];
 
