@@ -52,3 +52,15 @@
   -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
   transform: matrix(-1, -0.1, 0, 1, 0, 0);
 }
+
+.postit-container {
+  position: absolute;
+}
+
+.postit-middle {
+  position: absolute;
+  top: 435px;
+  right: 100px;
+  font-size: 175%;
+  transform: rotate(3deg);
+}

@@ -1,5 +1,8 @@
-<div class="postit">
-  <div style="padding-left:30px;padding-right:30px;margin-top:-20px;">
-    <ng-content></ng-content>
+<div class="postit-container" [style.top]="top" [style.right]="right" [style.transform]="transform"
+  [style.fontSize]="fontSize">
+  <div class="postit">
+    <div style="padding-left:30px;padding-right:30px;margin-top:-20px;">
+      <ng-content></ng-content>
+    </div>
   </div>
 </div>

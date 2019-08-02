@@ -13,19 +13,3 @@ code {
   font-size: 18px;
   color: brown;
 }
-
-.postit-top {
-  position: absolute;
-  top: 190px;
-  right: 130px;
-  transform: rotate(-1deg);
-  font-size: 200%;
-}
-
-.postit-middle {
-  position: absolute;
-  top: 435px;
-  right: 100px;
-  font-size: 175%;
-  transform: rotate(3deg);
-}
