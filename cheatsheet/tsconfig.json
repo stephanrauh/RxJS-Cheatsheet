@@ -10,9 +10,13 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es5",
+    "target": "es6",
     "pretty": true,
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"]
+  },
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "fullTemplateTypeCheck": true
   }
 }
