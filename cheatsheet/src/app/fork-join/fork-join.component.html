@@ -1,14 +1,10 @@
-<div><code>forkJoin()</code> does ...
+<div><code>forkJoin()</code> takes an array of <code>Observables</code>, takes the final result from each, and
+  returns it as an <code>Observable</code> emitting an array.
 </div>
-<div>Typically, it's used to...
+<div>Typically, it's used to collect data from multiple parallel http requests.
+</div>
+<div><b>Caveat:</b> If one of the <code>Observables</code> throws an error, <code>forkJoin</code> also return an error.
 </div>
 
 <app-default [demo]="this" operator="fork-join" [secondButton]="'destroy component'">
-    <div>
-        optional dynamic text above the live demo
-    </div>
 </app-default>
-<app-postit>The simple example is just forkJoin without flatMap()</app-postit>
-<app-postit>Simplify the<br />chained forkJoine example</app-postit>
-<app-postit>Let's improve the documentation!</app-postit>
-<app-postit>What about a flowchart?</app-postit>

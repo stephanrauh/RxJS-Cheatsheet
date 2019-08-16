@@ -44,6 +44,7 @@ import { OfComponent } from './of/of.component';
 import { ToArrayComponent } from './to-array/to-array.component';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
+import { PipePipe } from './pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { SubscribeComponent } from './subscribe/subscribe.component';
     TapComponent,
     ToArrayComponent,
     TransitionComponent,
-    UnsubscribeComponent
+    UnsubscribeComponent,
+    PipePipe
   ],
   imports: [
     BrowserModule,
